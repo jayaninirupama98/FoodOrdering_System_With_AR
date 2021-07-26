@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <script>
+    var isUserLoggedIn = sessionStorage.getItem("isUserLoggedIn")
+    if(isUserLoggedIn == null ) {
+      window.location.replace("index.html");
+    }
+  </script>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" >
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Restaurant app</title>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+<link rel="stylesheet"  href="style.css">
+
+</head>
+<body>
+  <section class="header">
+   <nav class="navbar">
+            <div class="navbar-box">
+                <h3 class="heading-tertiary">Restaurant Website</h3>
+
+   <ul class="navbar-list">
+          
+     <li class="navbar-item">
+      
+           <a href="home.html" class="navbar-link">Home</a>
+
+      </a>
+    </li>
+     <li class="navbar-item">
+      <a href="orders.html"  class="navbar-link">Orders</a>
+    </li>
+      <li class="navbar-item">
+      <a href="menu.html" class="navbar-link">Menu</a>
+    </li>
+    <li class="navbar-item" >
+      <button class="logout" onclick="logout()">
+     Logout</button></li>
+
+ </ul>
+ 
+   <div class="toggle" onclick="toggleMenu()"></div>
+        </nav>
+	<div class="container mt-2">
+		<div class="card" >
+			<div class="card-body">
+	<form id="post-form">
+    <h2> Add menu details</h2>
+	<label for="foodId">Food ID</label></br>
+	<input type="text" name="foodId" id="foodId"></br>
+	<label for="foodItem">Food Item</label></br>
+	<input type="text" name="foodItem" id="foodItem"></br>
+	<label for="price">Price</label></br>
+	<input type="text" name="price" id="price"></br>	
+	<label for="ingr">Ingredients</label></br>
+	<textarea name="ingr" id="ingr"></textarea></br>	
+	<label for="nutr">Nutritions</label></br>
+	<textarea name="nutr" id="nutr"></textarea></br>
+
+
+
+
+    
+	<input type="file" id="image" accept="images/*">
+    <label>Select categories</label> <br/>
+      
+
+  
+  <select>
+    <option value="pizza">Pizza</option>
+    <option value="burgers">Burgers</option>
+    <option value="juice">Juice</option>
+    <option value="cake">Cake</option>
+    <option value="ice-cream">Ice-Cream</option>
+    
+    
+</select>
+<div class="custom-select-wrapper">
+    <div class="custom-select">
+        <div class="custom-select__trigger"><span>Pizza</span>
+            <div class="arrow"></div>
+        </div>
+        <div class="custom-options">
+            <span class="custom-option selected" data-value="pizza">Pizza</span>
+            <span class="custom-option" data-value="burgers">Burgers</span>
+            <span class="custom-option" data-value="juice">Juice</span>
+            <span class="custom-option" data-value="cake">Cake</span>
+            <span class="custom-option" data-value="ice-cream">Ice-Cream</span>
+        </div>
+    </div>
+</div>
+ 
+ <br/>
+	<button type="button" class="btn btn-success" onclick="upload()">Upload</button>
+	
+
+
+
+
+
+	</form>
+</div>
+</div>
+ <div class="row mt-4" id="posts">
+
+         </div>
+
+</div>
+
+
+
+
+
+<!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/8.4.3/firebase-storage.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyC0JOffBuLeHo8ZsichLvt5h-th_KE-SL0",
+    authDomain: "restaurentdb.firebaseapp.com",
+    databaseURL: "https://restaurentdb-default-rtdb.firebaseio.com",
+    projectId: "restaurentdb",
+    storageBucket: "restaurentdb.appspot.com",
+    messagingSenderId: "778468465246",
+    appId: "1:778468465246:web:011ee98b83c7018fb372cf"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+</script>
+<script src="menu.js"></script>
+<script>
+  function logout() {
+      firebase.auth().signOut().then(function () {
+        sessionStorage.removeItem("isUserLoggedIn")
+        window.location.href = "index.html";
+      });
+    }
+  
+  </script>
+</body>
+</html>

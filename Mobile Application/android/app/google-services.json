@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "778468465246",
+    "firebase_url": "https://restaurentdb-default-rtdb.firebaseio.com",
+    "project_id": "restaurentdb",
+    "storage_bucket": "restaurentdb.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:778468465246:android:4bd8b6d41a0cab1ab372cf",
+        "android_client_info": {
+          "package_name": "com.example.resturent_app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "778468465246-eho11gpqv058da9elfbbm49686qt9e7f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBSiMnW5mK8Q4aiaKiehJ29t0CcZHTW2yA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "778468465246-eho11gpqv058da9elfbbm49686qt9e7f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
